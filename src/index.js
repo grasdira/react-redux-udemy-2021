@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import SeasonDisplay from './SeasonDisplay';
+import Spinner from './Spinner';
 
 // functional component
 // const App = () => {
@@ -41,17 +43,21 @@ class App extends React.Component {
         console.log('component updated rerendered');
     }
 
-    // a required method in React *** would be called VERY frequently!! ***
-    render() {
+    renderContent() {
         if(this.state.errorMessage && !this.state.latitude){
             return <div>Error: {this.state.errorMessage}</div>;
         }
         
         if(!this.state.errorMessage && this.state.latitude){
-            return <div>Latitude: {this.state.latitude}</div>;
+            return <SeasonDisplay latitude={this.state.latitude}/>
         }
 
-        return <div>Loading!</div>;
+        return <Spinner message="Please accept location request"/>;
+    }
+
+    // a required method in React *** would be called VERY frequently!! ***
+    render() {
+        return <div className="border red">{this.renderContent()}</div>;
     }
 }
 
