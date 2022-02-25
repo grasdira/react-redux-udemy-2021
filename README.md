@@ -1,3 +1,11 @@
+## Udemy課程筆記
+> *Modern React with Redux*  by Stephen Grider
+* 用分支區分section，不同sction但App一樣的會放在一起
+* 課程內小project會使用 `practice-project-*` 命名
+
+--------------------------------------------------
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
